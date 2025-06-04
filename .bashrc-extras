@@ -1,0 +1,27 @@
+umask 022
+
+alias ll='ls -lF'
+alias la='ls -laF'
+
+alias gb='git branch'
+alias gd='git diff'
+alias gg='git status'
+alias gl='git log'
+alias gs='git status'
+
+alias dp='docker ps -a'
+alias di='docker images -a'
+alias dv='docker volume ls'
+
+if [ -f ~/.git-prompt.sh ]; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export GIT_PS1_SHOWSTASHSTATE=1
+    export GIT_PS1_SHOWUNTRACKEDFILES=1
+    export GIT_PS1_SHOWUPSTREAM=auto
+    export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]$(__git_ps1 " \[\033[01;33m\][%s]\[\033[00m\]")\$ '
+    . ~/.git-prompt.sh
+fi
+
+if [ -f ~/.git-completion.sh ]; then
+    . ~/.git-completion.sh
+fi

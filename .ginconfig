@@ -1,0 +1,7 @@
+[user]
+	useConfigOnly = true
+	name = Sota Makino
+	email = sotamaki0421@gmail.com
+
+[core]
+	editor = vim
